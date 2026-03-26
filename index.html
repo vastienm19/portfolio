@@ -9,148 +9,145 @@
     <style>
         :root {
             --c-yellow: #FFD700;
-            --c-black: #0a0a0a;
+            --c-black: #000000;
             --f-title: 'Syne', sans-serif;
             --f-body: 'Cormorant Garamond', serif;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { background-color: var(--c-black); color: white; font-family: var(--f-body); overflow-x: hidden; }
-
-        /* --- HEADER ADAPTATIVO --- */
-        header {
-            position: fixed;
-            top: 0; width: 100%; height: 150px;
-            display: flex; align-items: center; justify-content: center;
-            z-index: 1000; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        /* Cuando scrolleás, el logo se va arriba a la izquierda */
-        header.scrolled {
-            height: 70px;
-            background: rgba(10, 10, 10, 0.9);
-            backdrop-filter: blur(10px);
-            justify-content: flex-start;
-            padding-left: 50px;
-        }
-
-        .logo-img { height: 60px; transition: 0.5s; }
-        header.scrolled .logo-img { height: 35px; }
-
-        /* --- SECCIONES --- */
-        section {
-            height: 100vh;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--c-black); 
+            color: white; 
+            font-family: var(--f-body);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            padding-top: 60px;
+        }
+
+        /* --- LOGO CENTRAL --- */
+        .header-logo {
+            margin-bottom: 80px;
             text-align: center;
-            position: relative;
-            padding: 0 10%;
+        }
+        .header-logo img {
+            height: 80px; /* Ajustá el tamaño de tu logo aquí */
         }
 
-        .bg-img {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; opacity: 0.25; z-index: -1;
-            filter: grayscale(100%) contrast(110%);
+        /* --- CONTENEDOR DE SERVICIOS --- */
+        .services-container {
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
         }
 
-        /* --- TÍTULOS Y SUBTÍTULOS --- */
-        .service-title {
+        .service-group {
+            margin-bottom: 60px;
+        }
+
+        /* LOS LINKS DE SERVICIOS */
+        .service-link {
             font-family: var(--f-title);
-            font-size: clamp(3rem, 12vw, 8.5rem);
+            font-size: 5rem;
             color: var(--c-yellow);
             text-transform: uppercase;
             text-decoration: none;
-            letter-spacing: -4px;
-            line-height: 0.8;
-            transition: 0.5s;
+            line-height: 0.9;
+            display: block;
+            transition: 0.3s;
         }
-
-        .service-title:hover {
+        .service-link:hover {
             color: white;
-            letter-spacing: 2px;
         }
 
-        .subtitle {
-            font-size: 1.4rem;
-            letter-spacing: 6px;
+        .service-subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin-top: 15px;
-            opacity: 0.7;
-            font-family: var(--f-body);
-            font-style: italic;
+            opacity: 0.6;
+            margin-top: 5px;
+            display: block;
         }
 
-        /* --- ABOUT & CONTACT --- */
-        .about-text { max-width: 750px; font-size: 2rem; line-height: 1.2; font-style: italic; }
-        .about-text b { color: var(--c-yellow); font-weight: 500; }
+        /* --- ABOUT ME --- */
+        .about-section {
+            margin: 100px 0;
+            max-width: 600px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .about-section p {
+            font-size: 1.8rem;
+            font-style: italic;
+            line-height: 1.4;
+        }
 
+        /* --- CONTACTO / WHATSAPP --- */
+        .contact-section {
+            margin-bottom: 150px;
+            text-align: center;
+        }
         .btn-ws {
             font-family: var(--f-title);
             color: var(--c-yellow);
             text-decoration: none;
-            border: 1px solid var(--c-yellow);
-            padding: 20px 50px;
-            font-size: 0.9rem;
-            letter-spacing: 4px;
+            border: 2px solid var(--c-yellow);
+            padding: 20px 40px;
+            font-size: 1rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             transition: 0.3s;
-            margin-top: 40px;
         }
-        .btn-ws:hover { background: var(--c-yellow); color: black; }
+        .btn-ws:hover {
+            background: var(--c-yellow);
+            color: black;
+        }
 
-        footer { padding: 50px 0; opacity: 0.3; font-size: 0.7rem; letter-spacing: 5px; }
+        footer {
+            padding-bottom: 50px;
+            opacity: 0.3;
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .service-link { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
-    <header id="main-header">
-        <img src="logo.png.jpeg" alt="VASTIENM" class="logo-img">
-    </header>
+    <div class="header-logo">
+        <img src="logo.png.jpeg" alt="VASTIENM">
+    </div>
 
-    <section>
-        <img src="edicion.png" class="bg-img">
-        <a href="edicion.html" class="service-title">Edición</a>
-        <span class="subtitle">Post-producción de alto impacto</span>
-    </section>
-
-    <section>
-        <img src="filmaker.jpg" class="bg-img">
-        <a href="filmmaker.html" class="service-title">Filmmaker</a>
-        <span class="subtitle">Dirección y captura cinematográfica</span>
-    </section>
-
-    <section>
-        <img src="drone.jpg" class="bg-img">
-        <a href="drone.html" class="service-title">Drone</a>
-        <span class="subtitle">Perspectivas aéreas 4K</span>
-    </section>
-
-    <section style="background: #080808;">
-        <div class="about-text">
-            Soy <b>Sebastian</b>, filmmaker y editor. Busco la <b>calidad estética</b> y la potencia visual en cada proyecto. Mi pasión por la música dicta el ritmo de mis historias.
+    <div class="services-container">
+        <div class="service-group">
+            <a href="edicion.html" class="service-link">Edición</a>
+            <span class="service-subtitle">Post-producción & Color</span>
         </div>
-    </section>
 
-    <section>
-        <h2 style="font-family: var(--f-title); font-size: 3rem; margin-bottom: 20px;">CONTACTO</h2>
-        <a href="https://wa.me/5491100000000" class="btn-ws" target="_blank">Escribime por WhatsApp</a>
-        <div style="height: 100px;"></div>
-        <footer>NORBERTO DE LA RIESTRA | ARGENTINA</footer>
-    </section>
+        <div class="service-group">
+            <a href="filmmaker.html" class="service-link">Filmmaker</a>
+            <span class="service-subtitle">Captura Cinematográfica</span>
+        </div>
 
-    <script>
-        // Lógica para que el logo se mueva al scrollear
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
+        <div class="service-group">
+            <a href="drone.html" class="service-link">Drone</a>
+            <span class="service-subtitle">Tomas Aéreas 4K</span>
+        </div>
+    </div>
+
+    <div class="about-section">
+        <p>Soy <b>Sebastian</b>, filmmaker y editor. Busco la calidad estética y la potencia visual en cada proyecto. La música dicta el ritmo; la imagen cuenta la historia.</p>
+    </div>
+
+    <div class="contact-section">
+        <a href="https://wa.me/5491100000000" class="btn-ws" target="_blank">WhatsApp Directo</a>
+    </div>
+
+    <footer>NORBERTO DE LA RIESTRA | ARGENTINA</footer>
 
 </body>
 </html>
