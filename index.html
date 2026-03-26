@@ -1,7 +1,139 @@
-<ul class="menu-links">
-    <li><a href="filmmaker.html">Filmmaker</a></li>
-    <li><a href="edicion.html">Edición</a></li>
-    <li><a href="drone.html">Drone</a></li>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-</ul>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VASTIENM | Filmmaker & Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Cormorant+Garamond:italic,wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --c-yellow: #FFD700;
+            --c-black: #0a0a0a;
+            --f-title: 'Syne', sans-serif;
+            --f-body: 'Cormorant Garamond', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { background-color: var(--c-black); color: white; font-family: var(--f-body); overflow-x: hidden; }
+
+        /* --- HEADER Y LOGO --- */
+        header {
+            position: fixed;
+            top: 0; width: 100%; height: 100px;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 1000; background: linear-gradient(to bottom, rgba(10,10,10,1), rgba(10,10,10,0));
+        }
+        .logo-img { height: 60px; transition: 0.5s; }
+
+        /* --- SECCIONES PRINCIPALES --- */
+        section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .bg-image {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; opacity: 0.4; z-index: -1;
+        }
+
+        /* --- ESTILO DE LOS TÍTULOS (LINKS) --- */
+        .service-link {
+            font-family: var(--f-title);
+            font-size: clamp(3rem, 10vw, 6rem);
+            color: var(--c-yellow);
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+        }
+        .service-link:hover {
+            color: white;
+            transform: scale(1.05);
+            letter-spacing: 5px;
+        }
+        
+        .service-tag {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        .btn-ws {
+            background: var(--c-yellow);
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-family: var(--f-title);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        /* --- ABOUT ME --- */
+        .about-text { max-width: 700px; font-size: 1.6rem; line-height: 1.4; font-style: italic; }
+        .about-text b { color: var(--c-yellow); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="VASTIENM" class="logo-img">
+    </header>
+
+    <section id="sc-filmmaker">
+        <img src="filmaker.jpg" class="bg-image"> <span class="service-tag">Servicio 01</span>
+        <a href="filmmaker.html" class="service-link">Filmmaker</a>
+        <p style="margin-top: 20px; opacity: 0.6;">Click para ver trabajos de rodaje</p>
+    </section>
+
+    <section id="sc-edicion">
+        <img src="edicion.png" class="bg-image">
+        <span class="service-tag">Servicio 02</span>
+        <a href="edicion.html" class="service-link">Edición</a>
+        <p style="margin-top: 20px; opacity: 0.6;">Click para ver post-producción</p>
+    </section>
+
+    <section id="sc-drone">
+        <img src="drone.jpg" class="bg-image">
+        <span class="service-tag">Servicio 03</span>
+        <a href="drone.html" class="service-link">Drone</a>
+        <p style="margin-top: 20px; opacity: 0.6;">Click para ver tomas aéreas</p>
+    </section>
+
+    <section id="sc-about" style="background: #0d0d0d;">
+        <h2 style="font-family: var(--f-title); color: var(--c-yellow); margin-bottom: 20px;">ABOUT ME</h2>
+        <div class="about-text">
+            Soy <b>Sebastian</b>, filmmaker y editor. Busco la calidad estética y la potencia visual en cada proyecto. Mi pasión por la música dicta el ritmo de mis ediciones.
+        </div>
+        <a href="about.html" style="color: white; margin-top: 20px; font-size: 0.8rem; letter-spacing: 2px;">LEER MÁS</a>
+    </section>
+
+    <section id="sc-contacto">
+        <h2 style="font-family: var(--f-title); margin-bottom: 20px;">HABLEMOS</h2>
+        <p style="font-size: 1.5rem; margin-bottom: 30px;">¿Tenés un proyecto en mente?</p>
+        <a href="https://wa.me/5491100000000?text=Hola%20Sebastian,%20vi%20tu%20web..." class="btn-ws" target="_blank">
+            WhatsApp Directo
+        </a>
+    </section>
+
+    <footer style="padding: 40px; text-align: center; font-size: 0.7rem; letter-spacing: 3px; opacity: 0.4;">
+        NORBERTO DE LA RIESTRA | ARGENTINA
+    </footer>
+
+</body>
+</html>
