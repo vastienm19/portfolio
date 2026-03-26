@@ -17,123 +17,122 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
         body { background-color: var(--c-black); color: white; font-family: var(--f-body); overflow-x: hidden; }
 
-        /* --- HEADER Y LOGO --- */
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0; width: 100%; height: 100px;
             display: flex; align-items: center; justify-content: center;
-            z-index: 1000; background: linear-gradient(to bottom, rgba(10,10,10,1), rgba(10,10,10,0));
+            z-index: 1000;
         }
-        .logo-img { height: 60px; transition: 0.5s; }
+        .logo-img { height: 50px; }
 
-        /* --- SECCIONES PRINCIPALES --- */
+        /* --- SECCIONES FULLSCREEN --- */
         section {
-            position: relative;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
         }
 
-        .bg-image {
+        /* Imágenes de fondo con el toque cinematográfico */
+        .bg-img {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; opacity: 0.4; z-index: -1;
+            object-fit: cover; opacity: 0.3; z-index: -1;
+            filter: grayscale(50%);
         }
 
-        /* --- ESTILO DE LOS TÍTULOS (LINKS) --- */
+        /* --- TÍTULOS QUE SON LINKS --- */
         .service-link {
             font-family: var(--f-title);
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: clamp(3.5rem, 12vw, 8rem);
             color: var(--c-yellow);
             text-transform: uppercase;
             text-decoration: none;
-            letter-spacing: -2px;
-            line-height: 0.9;
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            cursor: pointer;
+            letter-spacing: -3px;
+            line-height: 0.8;
+            transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .service-link:hover {
             color: white;
-            transform: scale(1.05);
-            letter-spacing: 5px;
-        }
-        
-        .service-tag {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        .btn-ws {
-            background: var(--c-yellow);
-            color: black;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-family: var(--f-title);
-            font-size: 0.8rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 20px;
-            border-radius: 4px;
+            transform: scale(1.02);
         }
 
-        /* --- ABOUT ME --- */
-        .about-text { max-width: 700px; font-size: 1.6rem; line-height: 1.4; font-style: italic; }
-        .about-text b { color: var(--c-yellow); }
+        .tag {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            opacity: 0.6;
+        }
 
+        /* --- ABOUT ME TEXTO ESTILIZADO --- */
+        .about-box { max-width: 800px; padding: 0 20px; }
+        .about-box p { font-size: 1.8rem; font-style: italic; line-height: 1.3; margin-bottom: 20px; }
+        .about-box b { color: var(--c-yellow); font-weight: 600; }
+
+        /* --- BOTÓN WHATSAPP --- */
+        .btn-ws {
+            font-family: var(--f-title);
+            color: var(--c-yellow);
+            text-decoration: none;
+            border: 1px solid var(--c-yellow);
+            padding: 15px 40px;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-ws:hover { background: var(--c-yellow); color: black; }
+
+        footer { padding-bottom: 40px; opacity: 0.3; font-size: 0.7rem; letter-spacing: 3px; }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo.png" alt="VASTIENM" class="logo-img">
+        <img src="logo.png.jpeg" alt="VASTIENM" class="logo-img">
     </header>
 
-    <section id="sc-filmmaker">
-        <img src="filmaker.jpg" class="bg-image"> <span class="service-tag">Servicio 01</span>
+    <section>
+        <img src="filmaker.jpg" class="bg-img">
+        <span class="tag">Explore</span>
         <a href="filmmaker.html" class="service-link">Filmmaker</a>
-        <p style="margin-top: 20px; opacity: 0.6;">Click para ver trabajos de rodaje</p>
     </section>
 
-    <section id="sc-edicion">
-        <img src="edicion.png" class="bg-image">
-        <span class="service-tag">Servicio 02</span>
+    <section>
+        <img src="edicion.png" class="bg-img">
+        <span class="tag">Edit</span>
         <a href="edicion.html" class="service-link">Edición</a>
-        <p style="margin-top: 20px; opacity: 0.6;">Click para ver post-producción</p>
     </section>
 
-    <section id="sc-drone">
-        <img src="drone.jpg" class="bg-image">
-        <span class="service-tag">Servicio 03</span>
+    <section>
+        <img src="drone.jpg" class="bg-img">
+        <span class="tag">Fly</span>
         <a href="drone.html" class="service-link">Drone</a>
-        <p style="margin-top: 20px; opacity: 0.6;">Click para ver tomas aéreas</p>
     </section>
 
-    <section id="sc-about" style="background: #0d0d0d;">
-        <h2 style="font-family: var(--f-title); color: var(--c-yellow); margin-bottom: 20px;">ABOUT ME</h2>
-        <div class="about-text">
-            Soy <b>Sebastian</b>, filmmaker y editor. Busco la calidad estética y la potencia visual en cada proyecto. Mi pasión por la música dicta el ritmo de mis ediciones.
+    <section style="background: #050505;">
+        <div class="about-box">
+            <span class="tag" style="display:block; margin-bottom:30px;">Vastienm</span>
+            <p>Soy <b>Sebastian</b>, filmmaker y editor. Busco la <b>calidad estética</b> y la potencia visual en cada proyecto.</p>
+            <p>La música dicta el ritmo; la imagen cuenta la historia.</p>
+            <a href="about.html" style="color:white; font-size: 0.7rem; letter-spacing: 2px;">DESCUBRIR MÁS</a>
         </div>
-        <a href="about.html" style="color: white; margin-top: 20px; font-size: 0.8rem; letter-spacing: 2px;">LEER MÁS</a>
     </section>
 
-    <section id="sc-contacto">
-        <h2 style="font-family: var(--f-title); margin-bottom: 20px;">HABLEMOS</h2>
-        <p style="font-size: 1.5rem; margin-bottom: 30px;">¿Tenés un proyecto en mente?</p>
-        <a href="https://wa.me/5491100000000?text=Hola%20Sebastian,%20vi%20tu%20web..." class="btn-ws" target="_blank">
+    <section>
+        <h2 style="font-family: var(--f-title); font-size: 3rem; margin-bottom: 40px;">HABLEMOS</h2>
+        <a href="https://wa.me/549XXXXXXXXXX?text=Hola%20Sebastian,%20vi%20tu%20web" class="btn-ws" target="_blank">
             WhatsApp Directo
         </a>
+        <div style="height: 100px;"></div>
+        <footer>NORBERTO DE LA RIESTRA | ARGENTINA</footer>
     </section>
-
-    <footer style="padding: 40px; text-align: center; font-size: 0.7rem; letter-spacing: 3px; opacity: 0.4;">
-        NORBERTO DE LA RIESTRA | ARGENTINA
-    </footer>
 
 </body>
 </html>
