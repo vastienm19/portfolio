@@ -9,16 +9,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: #000; color: #fff; font-family: 'Cormorant Garamond', serif; }
 
-        /* LOGO ARRIBA CENTRADO */
+        /* LOGO ARRIBA CENTRADO SIEMPRE */
         header {
             position: fixed;
-            top: 40px; width: 100%;
+            top: 0; width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             z-index: 100;
-            text-align: center;
         }
         header img { height: 60px; }
 
-        /* CADA SERVICIO OCUPA TODA LA PANTALLA */
+        /* CADA SECCIÓN OCUPA TODA LA PANTALLA */
         section {
             height: 100vh;
             display: flex;
@@ -29,25 +32,25 @@
             text-align: center;
         }
 
-        /* FOTO DE FONDO */
-        .bg {
+        /* FOTO DE FONDO CON OPACIDAD PARA QUE SE LEA EL TEXTO */
+        .foto-fondo {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover; opacity: 0.4; z-index: -1;
         }
 
-        /* TEXTO DEL SERVICIO */
-        .title {
+        /* NOMBRE DEL SERVICIO (LINK) */
+        .servicio-link {
             font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: 5rem;
             color: #FFD700;
             text-transform: uppercase;
             text-decoration: none;
             line-height: 0.8;
             transition: 0.3s;
         }
-        .title:hover { color: #fff; }
+        .servicio-link:hover { color: #fff; }
 
-        .subtitle {
+        .subtitulo {
             font-size: 1.2rem;
             letter-spacing: 5px;
             text-transform: uppercase;
@@ -55,9 +58,9 @@
             opacity: 0.8;
         }
 
-        /* ABOUT Y CONTACTO SIMPLES */
-        .about-box { max-width: 600px; padding: 20px; font-size: 1.8rem; font-style: italic; }
-        .btn-ws {
+        /* ABOUT Y CONTACTO */
+        .texto-about { max-width: 600px; padding: 20px; font-size: 1.8rem; font-style: italic; }
+        .boton-ws {
             color: #FFD700; border: 1px solid #FFD700; padding: 15px 40px;
             text-decoration: none; font-family: 'Syne'; font-size: 0.8rem; letter-spacing: 3px;
         }
@@ -70,31 +73,31 @@
     </header>
 
     <section>
-        <img src="filmaker.jpg" class="bg">
-        <a href="filmmaker.html" class="title">Filmmaker</a>
-        <span class="subtitle">Captura Cinematográfica</span>
+        <img src="edicion.png" class="foto-fondo">
+        <a href="edicion.html" class="servicio-link">Edición</a>
+        <span class="subtitulo">Post-producción & Color</span>
     </section>
 
     <section>
-        <img src="edicion.png" class="bg">
-        <a href="edicion.html" class="title">Edición</a>
-        <span class="subtitle">Narrativa y Color</span>
+        <img src="filmaker.jpg" class="foto-fondo">
+        <a href="filmmaker.html" class="servicio-link">Filmmaker</a>
+        <span class="subtitulo">Captura Cinematográfica</span>
     </section>
 
     <section>
-        <img src="drone.jpg" class="bg">
-        <a href="drone.html" class="title">Drone</a>
-        <span class="subtitle">Perspectivas Aéreas</span>
+        <img src="drone.jpg" class="foto-fondo">
+        <a href="drone.html" class="servicio-link">Drone</a>
+        <span class="subtitulo">Perspectivas Aéreas</span>
     </section>
 
     <section>
-        <div class="about-box">
+        <div class="texto-about">
             Soy Sebastian, filmmaker y editor. Busco la calidad estética y la potencia visual en cada proyecto.
         </div>
     </section>
 
     <section>
-        <a href="https://wa.me/5491100000000" class="btn-ws">WHATSAPP DIRECTO</a>
+        <a href="https://wa.me/5491100000000" class="boton-ws">WHATSAPP</a>
     </section>
 
 </body>
