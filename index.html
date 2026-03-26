@@ -4,150 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VASTIENM | Filmmaker & Editor</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Cormorant+Garamond:italic,wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --c-yellow: #FFD700;
-            --c-black: #000000;
-            --f-title: 'Syne', sans-serif;
-            --f-body: 'Cormorant Garamond', serif;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            background-color: var(--c-black); 
-            color: white; 
-            font-family: var(--f-body);
+            background-color: #000; 
+            color: #fff; 
+            font-family: 'Cormorant Garamond', serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding-top: 60px;
-        }
-
-        /* --- LOGO CENTRAL --- */
-        .header-logo {
-            margin-bottom: 80px;
             text-align: center;
-        }
-        .header-logo img {
-            height: 80px; /* Ajustá el tamaño de tu logo aquí */
+            padding: 80px 20px;
         }
 
-        /* --- CONTENEDOR DE SERVICIOS --- */
-        .services-container {
-            text-align: center;
-            width: 100%;
-            max-width: 900px;
-        }
+        /* LOGO PRINCIPAL */
+        .logo { margin-bottom: 100px; }
+        .logo img { height: 70px; }
 
-        .service-group {
-            margin-bottom: 60px;
-        }
+        /* LISTADO DE SERVICIOS */
+        .services { width: 100%; max-width: 800px; }
+        
+        .service-item { margin-bottom: 80px; }
 
-        /* LOS LINKS DE SERVICIOS */
-        .service-link {
-            font-family: var(--f-title);
+        .service-title {
+            font-family: 'Syne', sans-serif;
             font-size: 5rem;
-            color: var(--c-yellow);
-            text-transform: uppercase;
+            color: #FFD700;
             text-decoration: none;
-            line-height: 0.9;
+            text-transform: uppercase;
+            line-height: 1;
             display: block;
             transition: 0.3s;
         }
-        .service-link:hover {
-            color: white;
-        }
+        .service-title:hover { color: #fff; }
 
-        .service-subtitle {
+        .service-sub {
             font-size: 1.2rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            opacity: 0.6;
-            margin-top: 5px;
-            display: block;
-        }
-
-        /* --- ABOUT ME --- */
-        .about-section {
-            margin: 100px 0;
-            max-width: 600px;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .about-section p {
-            font-size: 1.8rem;
-            font-style: italic;
-            line-height: 1.4;
-        }
-
-        /* --- CONTACTO / WHATSAPP --- */
-        .contact-section {
-            margin-bottom: 150px;
-            text-align: center;
-        }
-        .btn-ws {
-            font-family: var(--f-title);
-            color: var(--c-yellow);
-            text-decoration: none;
-            border: 2px solid var(--c-yellow);
-            padding: 20px 40px;
-            font-size: 1rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        .btn-ws:hover {
-            background: var(--c-yellow);
-            color: black;
-        }
-
-        footer {
-            padding-bottom: 50px;
-            opacity: 0.3;
-            font-size: 0.7rem;
             letter-spacing: 5px;
             text-transform: uppercase;
+            opacity: 0.5;
+            margin-top: 10px;
+            display: block;
         }
+
+        /* ABOUT ME */
+        .about {
+            margin: 120px 0;
+            max-width: 650px;
+            font-size: 1.8rem;
+            line-height: 1.4;
+            font-style: italic;
+        }
+        .about b { color: #FFD700; font-weight: normal; }
+
+        /* CONTACTO */
+        .contact-btn {
+            font-family: 'Syne', sans-serif;
+            color: #FFD700;
+            text-decoration: none;
+            border: 1px solid #FFD700;
+            padding: 20px 50px;
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .contact-btn:hover { background: #FFD700; color: #000; }
+
+        footer { margin-top: 150px; opacity: 0.2; font-size: 0.7rem; letter-spacing: 5px; }
 
         @media (max-width: 768px) {
-            .service-link { font-size: 3rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="header-logo">
-        <img src="logo.png.jpeg" alt="VASTIENM">
-    </div>
-
-    <div class="services-container">
-        <div class="service-group">
-            <a href="edicion.html" class="service-link">Edición</a>
-            <span class="service-subtitle">Post-producción & Color</span>
-        </div>
-
-        <div class="service-group">
-            <a href="filmmaker.html" class="service-link">Filmmaker</a>
-            <span class="service-subtitle">Captura Cinematográfica</span>
-        </div>
-
-        <div class="service-group">
-            <a href="drone.html" class="service-link">Drone</a>
-            <span class="service-subtitle">Tomas Aéreas 4K</span>
-        </div>
-    </div>
-
-    <div class="about-section">
-        <p>Soy <b>Sebastian</b>, filmmaker y editor. Busco la calidad estética y la potencia visual en cada proyecto. La música dicta el ritmo; la imagen cuenta la historia.</p>
-    </div>
-
-    <div class="contact-section">
-        <a href="https://wa.me/5491100000000" class="btn-ws" target="_blank">WhatsApp Directo</a>
-    </div>
-
-    <footer>NORBERTO DE LA RIESTRA | ARGENTINA</footer>
-
-</body>
-</html>
+            .service-title {
