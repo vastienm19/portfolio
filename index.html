@@ -6,6 +6,7 @@
     <title>VASTIENM | Filmmaker & Editor</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Cormorant+Garamond:italic,wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* RESET TOTAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             background-color: #000; 
@@ -14,65 +15,98 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
 
-        /* LOGO PRINCIPAL */
-        .logo { margin-bottom: 100px; }
-        .logo img { height: 70px; }
+        /* LOGO CENTRADO ARRIBA */
+        .logo { margin-bottom: 120px; }
+        .logo img { height: 80px; }
 
-        /* LISTADO DE SERVICIOS */
-        .services { width: 100%; max-width: 800px; }
-        
-        .service-item { margin-bottom: 80px; }
+        /* SERVICIOS: EL CORAZÓN DE LA WEB */
+        .service-group { margin-bottom: 100px; text-align: center; }
 
-        .service-title {
+        .service-link {
             font-family: 'Syne', sans-serif;
-            font-size: 5rem;
+            font-size: 6rem; /* GIGANTE COMO TE GUSTABA */
             color: #FFD700;
             text-decoration: none;
             text-transform: uppercase;
-            line-height: 1;
+            line-height: 0.8;
             display: block;
             transition: 0.3s;
         }
-        .service-title:hover { color: #fff; }
+        .service-link:hover { color: #fff; }
 
-        .service-sub {
-            font-size: 1.2rem;
-            letter-spacing: 5px;
+        .subtitle {
+            font-size: 1.3rem;
+            letter-spacing: 8px;
             text-transform: uppercase;
-            opacity: 0.5;
-            margin-top: 10px;
+            opacity: 0.4;
+            margin-top: 15px;
             display: block;
         }
 
-        /* ABOUT ME */
+        /* ABOUT ME - SIMPLE */
         .about {
-            margin: 120px 0;
-            max-width: 650px;
-            font-size: 1.8rem;
-            line-height: 1.4;
+            margin: 150px 0;
+            max-width: 700px;
+            font-size: 2rem;
+            line-height: 1.3;
+            text-align: center;
             font-style: italic;
         }
         .about b { color: #FFD700; font-weight: normal; }
 
-        /* CONTACTO */
-        .contact-btn {
+        /* CONTACTO - WHATSAPP */
+        .btn-ws {
             font-family: 'Syne', sans-serif;
             color: #FFD700;
             text-decoration: none;
             border: 1px solid #FFD700;
-            padding: 20px 50px;
-            font-size: 0.9rem;
-            letter-spacing: 4px;
+            padding: 20px 60px;
+            font-size: 1rem;
+            letter-spacing: 5px;
             text-transform: uppercase;
             transition: 0.3s;
         }
-        .contact-btn:hover { background: #FFD700; color: #000; }
+        .btn-ws:hover { background: #FFD700; color: #000; }
 
-        footer { margin-top: 150px; opacity: 0.2; font-size: 0.7rem; letter-spacing: 5px; }
+        footer { margin-top: 200px; opacity: 0.2; font-size: 0.8rem; letter-spacing: 6px; }
 
+        /* PARA QUE SE VEA BIEN EN CELU */
         @media (max-width: 768px) {
-            .service-title {
+            .service-link { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">
+        <img src="logo.png.jpeg" alt="VASTIENM">
+    </div>
+
+    <div class="service-group">
+        <a href="edicion.html" class="service-link">Edición</a>
+        <span class="subtitle">Post-producción & Color</span>
+    </div>
+
+    <div class="service-group">
+        <a href="filmmaker.html" class="service-link">Filmmaker</a>
+        <span class="subtitle">Dirección Cinematográfica</span>
+    </div>
+
+    <div class="service-group">
+        <a href="drone.html" class="service-link">Drone</a>
+        <span class="subtitle">Tomas Aéreas 4K</span>
+    </div>
+
+    <div class="about">
+        Soy <b>Sebastian</b>, filmmaker y editor. Busco la calidad estética y la potencia visual en cada proyecto. La música dicta el ritmo; la imagen cuenta la historia.
+    </div>
+
+    <a href="https://wa.me/TU_NUMERO_AQUI" class="btn-ws">WhatsApp</a>
+
+    <footer>NORBERTO DE LA RIESTRA | ARGENTINA</footer>
+
+</body>
+</html>
