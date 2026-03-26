@@ -3,110 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VASTIENM | Filmmaker & Editor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Cormorant+Garamond:italic,wght@400;600&display=swap" rel="stylesheet">
+    <title>VASTIENM | Visual Storyteller</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Cormorant+Garamond:italic,wght@500;600&display=swap" rel="stylesheet">
+
     <style>
-        /* RESET TOTAL */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --c-yellow: #FFD700;
+            --c-black: #0a0a0a;
+            --f-title: 'Syne', sans-serif;
+            --f-body: 'Cormorant Garamond', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
         body { 
-            background-color: #000; 
-            color: #fff; 
-            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--c-black); 
+            color: white; 
+            font-family: var(--f-body); 
+            overflow-x: hidden;
+        }
+
+        /* --- LOGO DISEÑADO --- */
+        header {
+            position: fixed;
+            top: 0; width: 100%;
+            height: 160px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            padding: 100px 20px;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* LOGO CENTRADO ARRIBA */
-        .logo { margin-bottom: 120px; }
-        .logo img { height: 80px; }
-
-        /* SERVICIOS: EL CORAZÓN DE LA WEB */
-        .service-group { margin-bottom: 100px; text-align: center; }
-
-        .service-link {
-            font-family: 'Syne', sans-serif;
-            font-size: 6rem; /* GIGANTE COMO TE GUSTABA */
-            color: #FFD700;
-            text-decoration: none;
+        .logo-container { text-align: center; transition: 0.6s; }
+        
+        .logo-main {
+            font-family: var(--f-title);
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--c-yellow);
             text-transform: uppercase;
-            line-height: 0.8;
-            display: block;
-            transition: 0.3s;
-        }
-        .service-link:hover { color: #fff; }
-
-        .subtitle {
-            font-size: 1.3rem;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            opacity: 0.4;
-            margin-top: 15px;
+            letter-spacing: -4px;
+            line-height: 0.75;
             display: block;
         }
-
-        /* ABOUT ME - SIMPLE */
-        .about {
-            margin: 150px 0;
-            max-width: 700px;
-            font-size: 2rem;
-            line-height: 1.3;
-            text-align: center;
+        
+        .logo-sub {
+            font-family: var(--f-body);
+            font-size: 1.2rem;
             font-style: italic;
+            color: #fff;
+            display: block;
+            margin-top: 5px;
+            letter-spacing: 1px;
         }
-        .about b { color: #FFD700; font-weight: normal; }
 
-        /* CONTACTO - WHATSAPP */
-        .btn-ws {
-            font-family: 'Syne', sans-serif;
-            color: #FFD700;
+        /* Estado Scroll */
+        header.scrolled {
+            height: 70px;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            justify-content: flex-start;
+            padding-left: 30px;
+        }
+        header.scrolled .logo-main { font-size: 1.4rem; letter-spacing: -1px; }
+        header.scrolled .logo-sub { font-size: 0.7rem; margin-top: 1px; }
+
+        /* --- SECCIONES --- */
+        section {
+            height: 100vh;
+            padding: 100px 30px 30px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .border-frame {
+            position: relative;
+            width: 100%; height: 100%;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+            background-color: #151515;
+        }
+
+        /* QUITAMOS EL LINK AZUL SUBRAYADO */
+        .service-link {
             text-decoration: none;
-            border: 1px solid #FFD700;
-            padding: 20px 60px;
-            font-size: 1rem;
-            letter-spacing: 5px;
+            color: inherit;
+            display: block;
+            position: relative;
+            z-index: 20;
+        }
+
+        .bg-img {
+            position: absolute;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            object-fit: cover;
+            opacity: 0.4;
+            transition: 1s ease;
+        }
+
+        .content { position: relative; z-index: 10; text-align: center; }
+
+        h2 {
+            font-family: var(--f-title);
+            font-size: clamp(2rem, 8vw, 3.5rem);
             text-transform: uppercase;
-            transition: 0.3s;
+            color: var(--c-yellow);
+            line-height: 0.9;
         }
-        .btn-ws:hover { background: #FFD700; color: #000; }
 
-        footer { margin-top: 200px; opacity: 0.2; font-size: 0.8rem; letter-spacing: 6px; }
-
-        /* PARA QUE SE VEA BIEN EN CELU */
-        @media (max-width: 768px) {
-            .service-link { font-size: 3.5rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="logo">
-        <img src="logo.png.jpeg" alt="VASTIENM">
-    </div>
-
-    <div class="service-group">
-        <a href="edicion.html" class="service-link">Edición</a>
-        <span class="subtitle">Post-producción & Color</span>
-    </div>
-
-    <div class="service-group">
-        <a href="filmmaker.html" class="service-link">Filmmaker</a>
-        <span class="subtitle">Dirección Cinematográfica</span>
-    </div>
-
-    <div class="service-group">
-        <a href="drone.html" class="service-link">Drone</a>
-        <span class="subtitle">Tomas Aéreas 4K</span>
-    </div>
-
-    <div class="about">
-        Soy <b>Sebastian</b>, filmmaker y editor. Busco la calidad estética y la potencia visual en cada proyecto. La música dicta el ritmo; la imagen cuenta la historia.
-    </div>
-
-    <a href="https://wa.me/TU_NUMERO_AQUI" class="btn-ws">WhatsApp</a>
-
-    <footer>NORBERTO DE LA RIESTRA | ARGENTINA</footer>
-
-</body>
-</html>
+        p { font-size: 1.5rem; font-
