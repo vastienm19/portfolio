@@ -7,16 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body, html { 
-            height: 100%; 
-            background-color: #000; 
-            overflow-x: hidden; 
-            font-family: 'Syne', sans-serif;
-        }
+        body { background-color: #000; color: #fff; font-family: 'Syne', sans-serif; }
 
-        /* SECCIÓN DE IMPACTO ÚNICO */
-        .hero {
+        /* SECCIONES DE PANTALLA COMPLETA */
+        section {
             height: 100vh;
             width: 100%;
             display: flex;
@@ -24,51 +18,82 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('filmaker.jpg');
-            background-size: cover;
-            background-position: center;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
         }
 
-        .logo-top {
+        /* FOTO DE FONDO */
+        .foto {
             position: absolute;
-            top: 40px;
-            color: #FFD700;
-            font-size: 2rem;
-            letter-spacing: -1px;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.5; /* Oscurece la foto para que se lea el texto */
+            z-index: 1;
         }
 
-        .titulo-gigante {
+        /* TEXTO AMARILLO GIGANTE */
+        .contenido {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 15vw, 9rem);
             color: #FFD700;
-            font-size: clamp(3rem, 18vw, 12rem);
             text-transform: uppercase;
             line-height: 0.8;
-            text-decoration: none;
-            transition: 0.3s ease;
+            margin-bottom: 10px;
         }
 
-        .titulo-gigante:hover {
-            color: #fff;
-            transform: scale(1.02);
-        }
-
-        .sub-titulo {
-            color: #fff;
+        p {
             font-size: 1.2rem;
-            letter-spacing: 12px;
+            letter-spacing: 10px;
             text-transform: uppercase;
-            margin-top: 20px;
             opacity: 0.8;
+        }
+
+        /* LOGO FIJO */
+        .logo-fijo {
+            position: fixed;
+            top: 30px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+            font-size: 1.5rem;
+            color: #FFD700;
+            letter-spacing: 5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <div class="logo-top">VASTIENM</div>
-        
-        <a href="filmmaker.html" class="titulo-gigante">FILMMAKER</a>
-        <p class="sub-titulo">VISUAL STORYTELLER</p>
-    </div>
+    <div class="logo-fijo">VASTIENM</div>
+
+    <section>
+        <img src="filmaker.jpg" class="foto">
+        <div class="contenido">
+            <h1>FILMMAKER</h1>
+            <p>Visual Storyteller</p>
+        </div>
+    </section>
+
+    <section>
+        <img src="edicion.png" class="foto">
+        <div class="contenido">
+            <h1>EDICIÓN</h1>
+            <p>Narrativa & Color</p>
+        </div>
+    </section>
+
+    <section>
+        <img src="drone.jpg" class="foto">
+        <div class="contenido">
+            <h1>DRONE</h1>
+            <p>Vistas Aéreas</p>
+        </div>
+    </section>
 
 </body>
 </html>
