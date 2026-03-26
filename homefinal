@@ -4,67 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VASTIENM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Cormorant+Garamond:italic,wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body { 
+        body, html { 
+            height: 100%; 
             background-color: #000; 
-            color: #fff; 
-            font-family: 'Cormorant Garamond', serif; 
-            overflow-x: hidden;
+            overflow-x: hidden; 
+            font-family: 'Syne', sans-serif;
         }
 
-        /* LOGO ARRIBA CENTRADO */
-        header {
-            position: fixed;
-            top: 40px; width: 100%;
-            z-index: 1000;
-            text-align: center;
-        }
-        .logo { 
-            font-family: 'Syne', sans-serif; 
-            font-size: 2.5rem; 
-            color: #FFD700; 
-            text-transform: uppercase; 
-        }
-
-        /* CADA SERVICIO OCUPA TODA LA PANTALLA */
-        section {
+        /* SECCIÓN DE IMPACTO ÚNICO */
+        .hero {
             height: 100vh;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             position: relative;
-            text-align: center;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('filmaker.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
-        /* FOTO DE FONDO GIGANTE */
-        .foto-fondo {
+        .logo-top {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.4;
-            z-index: -1;
+            top: 40px;
+            color: #FFD700;
+            font-size: 2rem;
+            letter-spacing: -1px;
         }
 
-        /* TEXTO CENTRAL AMARILLO */
-        .servicio-link {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3.5rem, 15vw, 9rem);
+        .titulo-gigante {
             color: #FFD700;
-            text-decoration: none;
+            font-size: clamp(3rem, 18vw, 12rem);
             text-transform: uppercase;
             line-height: 0.8;
-            transition: 0.3s;
+            text-decoration: none;
+            transition: 0.3s ease;
         }
-        .servicio-link:hover { color: #fff; }
 
-        .subtitulo {
-            font-size: 1.3rem;
-            letter-spacing: 8px;
+        .titulo-gigante:hover {
+            color: #fff;
+            transform: scale(1.02);
+        }
+
+        .sub-titulo {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 12px;
             text-transform: uppercase;
             margin-top: 20px;
             opacity: 0.8;
@@ -73,27 +63,12 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo">VASTIENM</div>
-    </header>
-
-    <section>
-        <img src="filmaker.jpg" class="foto-fondo">
-        <a href="filmmaker.html" class="servicio-link">FILMMAKER</a>
-        <p class="subtitulo">Visual Storyteller</p>
-    </section>
-
-    <section>
-        <img src="edicion.png" class="foto-fondo">
-        <a href="edicion.html" class="servicio-link">EDICIÓN</a>
-        <p class="subtitulo">Narrativa & Color</p>
-    </section>
-
-    <section>
-        <img src="drone.jpg" class="foto-fondo">
-        <a href="drone.html" class="servicio-link">DRONE</a>
-        <p class="subtitulo">Vistas Aéreas</p>
-    </section>
+    <div class="hero">
+        <div class="logo-top">VASTIENM</div>
+        
+        <a href="filmmaker.html" class="titulo-gigante">FILMMAKER</a>
+        <p class="sub-titulo">VISUAL STORYTELLER</p>
+    </div>
 
 </body>
 </html>
